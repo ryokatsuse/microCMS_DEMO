@@ -1,7 +1,6 @@
-
-
-function IndexPage() {
+const Index: React.FC = () => {
   return (
+    
     <div className="w-full max-w-sm flex flex-col items-center justify-center">
       <h1 className="p-10 text-lg font-bold md:text-2xl">
         tailwindのセットアップ
@@ -22,7 +21,7 @@ function IndexPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default IndexPage;
+export default Index;
