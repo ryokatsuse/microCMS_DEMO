@@ -9,10 +9,10 @@ const Index: React.FC = ({ posts }) => {
       {posts.map(posts => (
         <div key={posts.id}>
           <p>{posts.name}</p>
-          <Link href="/posts/[slug]" as={`posts/${posts.id}`}>
             <img src={posts.image.url} alt=""/>
-          </Link>
-          <p>{posts.body}</p>
+          <p><Link href="/posts/[id]" as={`posts/${posts.id}`}>テスト</Link></p>
+          <div dangerouslySetInnerHTML={{__html: `${posts.body}`}}></div>
+          <p>{posts.id}</p>
         </div>
       ))}
     </div>
