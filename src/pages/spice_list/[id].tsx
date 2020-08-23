@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-unfetch';
 import { GetStaticPaths } from 'next'
-import { server } from '../../../config'
 
 const BlogId = ({detail}) => {
   return (
@@ -17,7 +16,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
 
-  const res = await fetch(`${server}` + '/spice_list', key);
+  const res = await fetch(process.env.ENDPOINT + '/spice_list', key);
   const repos = await res.json();
 
   const paths = repos.contents.map(repo => `/spice_list/${repo.id}`); 
