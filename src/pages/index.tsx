@@ -10,7 +10,7 @@ const Index: React.FC = ({ posts }) => {
         <div key={posts.id}>
           <p>{posts.name}</p>
             <img src={posts.image.url} alt=""/>
-          <p><Link href="/posts/[id]" as={`posts/${posts.id}`}>テスト</Link></p>
+          <p><Link href="/spice_list/[id]" as={`spice_list/${posts.id}`}><a>テスト</a></Link></p>
           <div dangerouslySetInnerHTML={{__html: `${posts.body}`}}></div>
           <p>{posts.id}</p>
         </div>
