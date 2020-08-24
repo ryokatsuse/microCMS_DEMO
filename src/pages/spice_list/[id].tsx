@@ -1,7 +1,11 @@
 import fetch from 'isomorphic-unfetch';
 import { GetStaticPaths } from 'next'
 
-const BlogId = ({detail}) => {
+type Props = {
+  detail: any;
+};
+
+const DetailId: React.FC<Props> = ({detail}) => {
   return (
     <div>
       <p>{detail.name}</p>
@@ -25,7 +29,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const id = context.params.id;
-  console.log(id)
 
   const key = {
     headers: {'X-API-KEY': process.env.API_KEY},
@@ -44,4 +47,4 @@ export const getStaticProps = async context => {
   };
 };
 
-export default BlogId;
+export default DetailId;
