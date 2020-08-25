@@ -4,5 +4,18 @@ module.exports = {
     extend: {},
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        ".line-clamp": {
+          'display': '-webkit-box',
+          'overflow': 'hidden',
+          '-webkit-line-clamp': '3',
+          '-webkit-box-orient': 'vertical'
+        }
+      };
+
+      addUtilities(newUtilities);
+    }
+  ]
 };

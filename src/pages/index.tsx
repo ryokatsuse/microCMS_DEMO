@@ -14,28 +14,30 @@ const Index: React.FC<Props> = ({ dataList }) => {
     <Layout>
       <div className="flex justify-start items-center mt-10 p-5">
         {dataList.map(dataList => (
-          <Link
-            key={dataList.id}
-            href="/spice_list/[id]"
-            as={`spice_list/${dataList.id}`}><a>
-            <div
-              className="max-w-sm rounded overflow-hidden shadow-lg mr-6"
-              key={dataList.id}>
+          <div
+            className="max-w-sm rounded overflow-hidden shadow-lg mr-6"
+            key={dataList.id}>
+            <Link
+              key={dataList.id}
+              href="/spice_list/[id]"
+              as={`spice_list/${dataList.id}`}>
+              <a>
                 <img
-                  className="object-contain h-48"
+                  className="object-contain h-48 mt-0 mb-0 ml-auto mr-auto"
                   src={dataList.image.url} alt=""/>
                 <div className="px-6 py-4">
                 <p
                   className="font-bold text-xl mb-2">{dataList.name}</p>
                 <div
-                  className="text-gray-700 text-base"
+                  className="text-base line-clamp"
                   dangerouslySetInnerHTML={{__html: `${dataList.body}`}}></div>
                 </div>
                 <div className="px-6 pt-4 pb-2">
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{dataList.tags[0].name}</span>
                 </div>
-            </div></a>
-          </Link>
+              </a>
+            </Link>
+          </div>
         ))}
       </div>
     </Layout>
