@@ -1,17 +1,21 @@
 import fetch from 'isomorphic-unfetch';
 import { GetStaticPaths } from 'next'
+import Layout from '../../components/layout';
+import { microCmsData } from '../../types/microCmsData'
 
 type Props = {
-  detail: any;
+  detail: microCmsData;
 };
 
 const DetailId: React.FC<Props> = ({detail}) => {
   return (
-    <div>
-      <p>{detail.name}</p>
-      <img src={detail.image.url} alt=""/>
-      <div dangerouslySetInnerHTML={{__html: `${detail.body}`}}></div>
-    </div>
+    <Layout>
+      <div>
+        <p>{detail.name}</p>
+        <img src={detail.image.url} alt=""/>
+        <div dangerouslySetInnerHTML={{__html: `${detail.body}`}}></div>
+      </div>
+    </Layout>
   );
 };
 
