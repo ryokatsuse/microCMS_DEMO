@@ -15,3 +15,6 @@ yarn
 yarn dev
 
 ```
+
+## ビルド
+vercel
