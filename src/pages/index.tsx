@@ -1,37 +1,38 @@
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link';
 import Layout from '../components/layout';
+import { microCmsData } from '../../types/microCmsData'
 
 // TODO microCMSのAPIに型定義つける
 type Props = {
-  posts: any;
+  dataList: Array<microCmsData>
 };
 
 
-const Index: React.FC<Props> = ({ posts }) => {
+const Index: React.FC<Props> = ({ dataList }) => {
   return (
     <Layout>
       <div className="flex justify-start items-center mt-10 p-5">
-        {posts.map(posts => (
+        {dataList.map(dataList => (
           <Link
-            key={posts.id}
+            key={dataList.id}
             href="/spice_list/[id]"
-            as={`spice_list/${posts.id}`}><a>
+            as={`spice_list/${dataList.id}`}><a>
             <div
               className="max-w-sm rounded overflow-hidden shadow-lg mr-6"
-              key={posts.id}>
+              key={dataList.id}>
                 <img
                   className="object-contain h-48"
-                  src={posts.image.url} alt=""/>
+                  src={dataList.image.url} alt=""/>
                 <div className="px-6 py-4">
                 <p
-                  className="font-bold text-xl mb-2">{posts.name}</p>
+                  className="font-bold text-xl mb-2">{dataList.name}</p>
                 <div
                   className="text-gray-700 text-base"
-                  dangerouslySetInnerHTML={{__html: `${posts.body}`}}></div>
+                  dangerouslySetInnerHTML={{__html: `${dataList.body}`}}></div>
                 </div>
                 <div className="px-6 pt-4 pb-2">
-                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{posts.tags[0].name}</span>
+                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{dataList.tags[0].name}</span>
                 </div>
             </div></a>
           </Link>
@@ -46,15 +47,15 @@ export const getStaticProps = async () => {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
 
-  const res = await fetch(process.env.ENDPOINT + '/spice_list', key);
+  const res = await fetch(process.env.ENDPOINT + '/spice_list', key)
 
-  const data = await res.json();
+  const data = await res.json()
 
   return {
     props: {
-      posts: data.contents,
+      dataList: data.contents,
     },
   };
 };
 
-export default Index;
+export default Index

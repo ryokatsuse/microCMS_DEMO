@@ -4,8 +4,8 @@ import Footer from './footer';
 import Meta from './meta';
 
 type Props = {
-  meta?: React.ReactNode;
-  children: React.ReactNode;
+  meta?: React.ReactNode
+  children: React.ReactNode
 };
 
 const Layout: React.FC<Props> = ({ meta, children }) => {
@@ -14,7 +14,7 @@ const Layout: React.FC<Props> = ({ meta, children }) => {
       {meta ? meta : <Meta />}
       <Header></Header>
       <div className="min-h-screen">
-        <main>{children}</main>
+        <main className="m-2">{children}</main>
       </div>
       <Footer />
     </>
