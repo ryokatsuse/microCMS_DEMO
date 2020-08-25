@@ -3,4 +3,5 @@ export type microCmsData = {
   name: string
   image: { url: string }
   body: object
+  tags: object
 };

@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link';
 import Layout from '../components/layout';
-import { microCmsData } from '../../types/microCmsData'
+import { microCmsData } from '../types/microCmsData'
 
 type Props = {
   dataList: Array<microCmsData>
