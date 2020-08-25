@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import { microCmsData } from '../../types/microCmsData'
 
-// TODO microCMSのAPIに型定義つける
 type Props = {
   dataList: Array<microCmsData>
 };
