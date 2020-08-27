@@ -50,7 +50,7 @@ const Index: React.FC<Props> = ({ dataList }) => {
 
 export const getStaticProps = async () => {
   const key = {
-    headers: { 'X-API-KEY': process.env.API_KEY },
+    headers: { 'X-API-KEY': process.env.API_KEY as string },
   }
 
   const res = await fetch(process.env.ENDPOINT + '/spice_list', key)
