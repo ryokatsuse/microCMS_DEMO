@@ -1,10 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react'
+import Head from 'next/head'
 
 type Props = {
   description?: string
   title?: string
-};
+}
 
 const Meta: React.FC<Props> = ({ description, title }) => {
   return (
@@ -15,7 +15,7 @@ const Meta: React.FC<Props> = ({ description, title }) => {
         content={description ? description : `スパイス図鑑`}
       />
     </Head>
-  );
-};
+  )
+}
 
-export default Meta;
+export default Meta

@@ -1,12 +1,12 @@
-import React from 'react';
-import Header from './header';
-import Footer from './footer';
-import Meta from './meta';
+import React from 'react'
+import Header from './header'
+import Footer from './footer'
+import Meta from './meta'
 
 type Props = {
   meta?: React.ReactNode
   children: React.ReactNode
-};
+}
 
 const Layout: React.FC<Props> = ({ meta, children }) => {
   return (
@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({ meta, children }) => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
