@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     <>
       <header className="flex justify-between items-center p-5 bg-orange-500">
         <h1 className="text-xl">
-          <a className="text-white font-bold" href="#">
+          <a className="text-white font-bold" href="/">
             スパイス図鑑
           </a>
         </h1>

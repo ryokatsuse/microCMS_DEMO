@@ -5,5 +5,6 @@ export type microCmsData = {
   name: string
   image: { url: string }
   body: string
+  origin: string
   tags: Tag[]
 }

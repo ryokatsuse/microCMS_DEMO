@@ -10,9 +10,25 @@ type Props = {
 const DetailId: React.FC<Props> = ({ detail }) => {
   return (
     <Layout>
-      <div>
-        <p>{detail.name}</p>
-        <img src={detail.image.url} alt="" />
+      <div className="lg:ml-40 lg:mr-40 lg:mt-4 lg:mb-4 sm:m-4">
+        <h1 className="font-bold text-xl mb-5">{detail.name}</h1>
+        <img
+          className="object-contain h-48 mt-0 mb-5 ml-auto mr-auto"
+          src={detail.image.url}
+          alt=""
+        />
+        <table className="table-auto mt-5 mb-5 ml-auto mr-auto">
+          <tbody>
+            <tr>
+              <td className="border px-4 py-2">科名</td>
+              <td className="border px-4 py-2">原産地</td>
+            </tr>
+            <tr className="bg-gray-100">
+              <td className="border px-4 py-2">{detail.tags[0].name}</td>
+              <td className="border px-4 py-2">{detail.origin}</td>
+            </tr>
+          </tbody>
+        </table>
         <div dangerouslySetInnerHTML={{ __html: `${detail.body}` }}></div>
       </div>
     </Layout>
