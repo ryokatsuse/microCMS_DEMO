@@ -14,6 +14,9 @@ module.exports = {
           '-webkit-box-orient': 'vertical',
           'overflow': 'hidden',
           'max-height': '75px'
+        },
+        ".l-grid-cols" : {
+          'grid-template-columns': 'repeat(auto-fit, minmax(200px, 1fr))'
         }
       };
 

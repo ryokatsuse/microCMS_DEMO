@@ -10,7 +10,7 @@ type Props = {
 const DetailId: React.FC<Props> = ({ detail }) => {
   return (
     <Layout>
-      <div className="lg:ml-40 lg:mr-40 lg:mt-4 lg:mb-4 sm:m-4">
+      <div className="max-w-2xl mt-10 mb-0 ml-auto mr-auto">
         <h1 className="font-bold text-xl mb-5">{detail.name}</h1>
         <img
           className="object-contain h-48 mt-0 mb-5 ml-auto mr-auto"

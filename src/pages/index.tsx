@@ -10,10 +10,10 @@ type Props = {
 const Index: React.FC<Props> = ({ dataList }) => {
   return (
     <Layout>
-      <div className="grid grid-cols-3 gap-4 mt-10 p-5">
+      <div className="grid l-grid-cols gap-4 mt-10 p-5">
         {dataList.map((dataList) => (
           <div
-            className="max-w-sm rounded overflow-hidden shadow-lg mr-6 mb-6"
+            className="min-w-full rounded overflow-hidden shadow-lg mr-6 mb-6"
             key={dataList.id}
           >
             <Link
