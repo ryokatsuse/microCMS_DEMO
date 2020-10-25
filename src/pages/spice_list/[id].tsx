@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import { GetStaticPaths } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import Layout from '../../components/layout'
 import { microCmsData } from '../../types/microCmsData'
 
@@ -46,11 +46,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths: Array<string> = repos.contents.map(
     (repo: { id: string }) => `/spice_list/${repo.id}`
   )
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
-export const getStaticProps = async (context: { params: { id: string } }) => {
-  const id = context.params.id
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const id = context?.params?.id
 
   const key = {
     headers: { 'X-API-KEY': process.env.API_KEY as string },
